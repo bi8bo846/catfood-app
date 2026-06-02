@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 var P = {
   bg:"#F4F0EA", card:"#F1EEE8", block:"#F7F3EC",
