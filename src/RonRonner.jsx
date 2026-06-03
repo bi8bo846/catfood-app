@@ -2328,7 +2328,7 @@ export default function App(){
       {page!=="admin"&&!showNewCat&&!catPicker&&!modalOpen&&<FAB onAddCat={fabAddCat} onAddWeight={fabAddWeight} onAddHealth={fabAddHealth} onAddRecord={fabAddRecord} onAddInventory={fabInventoryCb}/>}
       {showNewCat&&<CatEditPage cat={null} onSave={function(newCat){var cats=lsGet("rr_cats",[]);newCat.id=Date.now().toString();cats.push(newCat);lsSet("rr_cats",cats);setShowNewCat(false);setPage("cats");setCatsKey(function(k){return k+1;})}} onBack={function(){setShowNewCat(false);}}/>}
       {catPicker&&catPicker!=="new"&&<CatPickerModal cats={lsGet("rr_cats",[])} title="選擇貓咪" onSelect={function(cat){var trigger=catPicker;setCatPicker(null);setPage("cats");setFabTrigger(trigger+":"+cat.id);}} onClose={function(){setCatPicker(null);}}/>}
-      {page!=="admin"&&(<div style={{position:"fixed",bottom:"max(14px, env(safe-area-inset-bottom))",
+      {page!=="admin"&&(<div style={{position:"fixed",bottom:"28px",
 paddingBottom:"6px",left:"50%",transform:"translateX(-50%)",width:"calc(100% - 32px)",maxWidth:398,background:P.card,borderRadius:20,boxShadow:"0 4px 24px rgba(0,0,0,0.10)",display:"flex",zIndex:50,border:"1px solid "+P.border}}>
         {TABS.map(function(t){var active=page===t.id;return(
           <button type="button" key={t.id} onClick={function(){setPage(t.id);}} style={{flex:1,padding:"12px 4px 10px",background:"none",border:"none",cursor:"pointer",fontSize:11,color:active?P.btn:P.muted,fontWeight:active?700:400,borderBottom:"none",borderTop:"none",borderRadius:active?"0 0 0 0":"none",position:"relative"}}>{t.label}</button>
