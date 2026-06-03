@@ -1496,7 +1496,7 @@ function InventoryPage(props){
               {detailCan.note&&<div><div style={{fontSize:13,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:13,color:P.ink,whiteSpace:"pre-wrap",lineHeight:1.6}}>{detailCan.note}</div>🥫</div>}
             </div>
             <div style={{display:"flex",gap:8,marginTop:20}}>
-              <BtnGhost onClick={function(){setDetailCan(null);}} style={{flex:1}}>關閉</BtnGhost>
+              <BtnGhost onClick={function(){handleDelete(detailCan.id);setDetailCan(null);}} style={{flex:1,color:"#B91C1C",borderColor:"#FCCACA"}}>刪除</BtnGhost>
               <Btn onClick={function(){openEdit(detailCan);setDetailCan(null);}} style={{flex:1}}>編輯</Btn>
             </div>
           </div>
