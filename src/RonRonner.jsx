@@ -302,7 +302,7 @@ function BloodRow(props){
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",paddingBottom:8,marginBottom:8,borderBottom:"1px solid "+P.block}}>
       <div style={{fontSize:13,fontWeight:600,color:P.ink,paddingTop:4}}>{it.label}{it.zh?" "+it.zh:""}</div>
       <div style={{textAlign:"right"}}>
-        <div><span style={{fontSize:13,fontWeight:600,color:tc}}>{val}{arrow}</span><span style={{fontSize:12,color:P.muted,marginLeft:4}}>{unit}</span>🥫</div>
+        <div><span style={{fontSize:13,fontWeight:600,color:tc}}>{val}{arrow}</span><span style={{fontSize:12,color:P.muted,marginLeft:4}}>{unit}</span></div>
         {rangeStr&&<div style={{fontSize:11,color:"#BDB6AD"}}>參考：{rangeStr}</div>}
       </div>
     </div>
@@ -1495,10 +1495,10 @@ function InventoryPage(props){
             {detailCan.photo&&<img src={detailCan.photo} style={{width:"100%",maxHeight:200,objectFit:"cover",borderRadius:12,marginBottom:12}}/>}
             {detailCan.flavor&&<div style={{fontSize:14,color:P.muted,marginBottom:8}}>{detailCan.flavor}</div>}
             <div style={{display:"flex",flexDirection:"column",gap:8}}>
-              <div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>分類</span><span style={{fontSize:13,color:P.ink}}>{detailCan.category}</span>🥫</div>
-              <div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>數量</span><span style={{fontSize:13,fontWeight:700,color:P.ink}}>{detailCan.qty}</span>🥫</div>
-              {detailCan.expiry&&<div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>到期日</span><span style={{fontSize:13,color:P.ink}}>{detailCan.expiry}</span>🥫</div>}
-              {detailCan.note&&<div><div style={{fontSize:13,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:13,color:P.ink,whiteSpace:"pre-wrap",lineHeight:1.6}}>{detailCan.note}</div>🥫</div>}
+              <div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>分類</span><span style={{fontSize:13,color:P.ink}}>{detailCan.category}</span></div>
+              <div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>數量</span><span style={{fontSize:13,fontWeight:700,color:P.ink}}>{detailCan.qty}</span></div>
+              {detailCan.expiry&&<div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>到期日</span><span style={{fontSize:13,color:P.ink}}>{detailCan.expiry}</span></div>}
+              {detailCan.note&&<div><div style={{fontSize:13,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:13,color:P.ink,whiteSpace:"pre-wrap",lineHeight:1.6}}>{detailCan.note}</span></div>}
             </div>
             <div style={{display:"flex",gap:8,marginTop:20}}>
               <BtnGhost onClick={function(){handleDelete(detailCan.id);setDetailCan(null);}} style={{flex:1,color:"#B91C1C",borderColor:"#FCCACA"}}>刪除</BtnGhost>
@@ -2082,18 +2082,18 @@ function NutrientCalculator(){
                   <div style={{marginBottom:10}}>
                     <div style={{background:P.block,borderRadius:12,padding:"12px 14px",marginBottom:6}}>
                       <div style={{fontSize:11,color:P.muted,marginBottom:4}}>廠標熱量</div>
-                      <div style={{fontSize:20,fontWeight:800,color:P.ink}}>{kcalInput} <span style={{fontSize:12,fontWeight:400,color:P.muted}}>kcal/100g</span>🥫</div>
+                      <div style={{fontSize:20,fontWeight:800,color:P.ink}}>{kcalInput} <span style={{fontSize:12,fontWeight:400,color:P.muted}}>kcal/100g</span></div>
                     </div>
                     <div style={{background:P.bg,borderRadius:12,padding:"10px 14px",border:"1px solid "+P.block+""}}>
                       <div style={{fontSize:11,color:P.muted,marginBottom:2}}>估算熱量（ME）</div>
-                      <div style={{fontSize:15,fontWeight:700,color:P.muted}}>{meDisplay} <span style={{fontSize:11,fontWeight:400}}>kcal/100g</span>🥫</div>
+                      <div style={{fontSize:15,fontWeight:700,color:P.muted}}>{meDisplay} <span style={{fontSize:11,fontWeight:400}}>kcal/100g</span></div>
                     </div>
                     <div style={{fontSize:10,color:P.muted,marginTop:6,lineHeight:1.5}}>※ 估算熱量（ME）主要用於分析熱量來源比例，非實際產品熱量。</div>
                   </div>
                 ):(
                   <div style={{background:P.block,borderRadius:12,padding:"12px 14px",marginBottom:10}}>
                     <div style={{fontSize:11,color:P.muted,marginBottom:4}}>估算熱量（ME）</div>
-                    <div style={{fontSize:20,fontWeight:800,color:P.ink}}>{meDisplay} <span style={{fontSize:12,fontWeight:400,color:P.muted}}>kcal/100g</span>🥫</div>
+                    <div style={{fontSize:20,fontWeight:800,color:P.ink}}>{meDisplay} <span style={{fontSize:12,fontWeight:400,color:P.muted}}>kcal/100g</span></div>
                     <div style={{fontSize:10,color:P.muted,marginTop:4}}>※ 僅供分析熱量來源比例，非實際產品熱量。</div>
                   </div>
                 )}
@@ -2262,7 +2262,7 @@ function AnalysisPage(){
                 </div>
                 {showData.overallScore&&<LampBadge cls={showData.overallClass} label={showData.overallScore}/>}
               </div>
-              {showData.meatPercent&&<div style={{fontSize:13,color:P.muted,marginBottom:6}}>肉含量 <span style={{fontWeight:700,color:P.ink}}>{showData.meatPercent}</span>🥫</div>}
+              {showData.meatPercent&&<div style={{fontSize:13,color:P.muted,marginBottom:6}}>肉含量 <span style={{fontWeight:700,color:P.ink}}>{showData.meatPercent}</span></div>}
               {(showData.tags||[]).length>0&&<div style={{marginBottom:8}}>{(showData.tags||[]).map(function(t,i){return <StatusTag key={i} text={t.text} cls={t.cls}/>;})}</div>}
               {showData.verdict&&<div style={{fontSize:13,color:P.ink,lineHeight:1.6,padding:"8px 12px",background:P.block,borderRadius:10}}>{showData.verdict}</div>}
             </div>
@@ -2284,8 +2284,7 @@ function AdminPage(){
   function showToast(msg){setToast(msg);setTimeout(function(){setToast("");},2500);}
   function handleExport(){var data={version:1,date:new Date().toISOString(),cats:lsGet("rr_cats",[]),weights:lsGet("rr_weights",[]),healths:lsGet("rr_healths",[]),records:lsGet("rr_records",[]),inventory:lsGet("rr_inventory",[])};var blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});var url=URL.createObjectURL(blob);var a=document.createElement("a");a.href=url;a.download="ronronner-backup.json";a.click();}
   function handleImport(e){var file=e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(ev){try{var d=JSON.parse(ev.target.result);if(d.cats)lsSet("rr_cats",d.cats);if(d.weights)lsSet("rr_weights",d.weights);if(d.healths)lsSet("rr_healths",d.healths);if(d.records)lsSet("rr_records",d.records);if(d.inventory)lsSet("rr_inventory",d.inventory);showToast("匯入成功！");setTimeout(function(){window.location.reload();},1000);}catch(err){showToast("格式錯誤");}};reader.readAsText(file);}
-  return(<div style={{background:P.bg,minHeight:"100vh",paddingBottom:80}}>{toast&&<div style={{position:"fixed",top:16,left:"50%",transform:"translateX(-50%)",background:"#3A3028",color:"#fff",padding:"10px 20px",borderRadius:99,fontSize:13,zIndex:999}}>{toast}</div>}<div style={{padding:"1.5rem 1.25rem"}}><div style={{fontSize:17,fontWeight:700,color:P.ink,marginBottom:20}}>管理員</div><div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"16px",marginBottom:8}}><div style={{fontSize:14,fontWeight:600,color:P.ink,marginBottom:8}}>資料備份</div><button type="button" onClick={handleExport} style={{display:"block",width:"100%",padding:"11px",borderRadius:12,border:"1px solid "+P.border,background:"transparent",color:P.ink,fontSize:14,cursor:"pointer",marginBottom:8,textAlign:"left"}}>📤 匯出備份</button><label style={{display:"block",width:"100%",padding:"11px",borderRadius:12,border:"1px solid "+P.border,background:"transparent",color:P.ink,fontSize:14,cursor:"pointer",textAlign:"left",boxSizing:"border-box"}}>📥 匯入備份<input type="file" accept=".json" onChange={handleImport} style={{display:"none"}}/></label>🥫</div></div>🥫</div>);}
-
+  return(<div style={{background:P.bg,minHeight:"100vh",paddingBottom:80}}>{toast&&<div style={{position:"fixed",top:16,left:"50%",transform:"translateX(-50%)",background:"#3A3028",color:"#fff",padding:"10px 20px",borderRadius:99,fontSize:13,zIndex:999}}>{toast}</div>}<div style={{padding:"1.5rem 1.25rem"}}><div style={{fontSize:17,fontWeight:700,color:P.ink,marginBottom:20}}>管理員</div><div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"16px",marginBottom:8}}><div style={{fontSize:14,fontWeight:600,color:P.ink,marginBottom:8}}>資料備份</div><button type="button" onClick={handleExport} style={{display:"block",width:"100%",padding:"11px",borderRadius:12,border:"1px solid "+P.border,background:"transparent",color:P.ink,fontSize:14,cursor:"pointer",marginBottom:8,textAlign:"left"}}>📤 匯出備份</button><label style={{display:"block",width:"100%",padding:"11px",borderRadius:12,border:"1px solid "+P.border,background:"transparent",color:P.ink,fontSize:14,cursor:"pointer",textAlign:"left",boxSizing:"border-box"}}>📥 匯入備份<input type="file" accept=".json" onChange={handleImport} style={{display:"none"}}/></label></div></div></div>);
 function FAB(props){
   var onAddCat=props.onAddCat,onAddWeight=props.onAddWeight,onAddHealth=props.onAddHealth,onAddRecord=props.onAddRecord,onAddInventory=props.onAddInventory;
   var [open,setOpen]=useState(false);
@@ -2329,7 +2328,7 @@ export default function App(){
       {page==="cal"&&<CalendarPage fabTrigger={fabTrigger} onFabHandled={function(){setFabTrigger(null);}} onModalOpen={function(){setModalOpen(true);}} onModalClose={function(){setModalOpen(false);}}/>}
       {page==="inv"&&<InventoryPage fabInventoryCb={fabInventoryCb} fabTrigger={fabTrigger} onFabHandled={function(){setFabTrigger(null);}} onModalOpen={function(){setModalOpen(true);}} onModalClose={function(){setModalOpen(false);}}/>}
       {page==="ana"&&<AnalysisPage/>}
-      {page==="admin"&&(<div><div style={{display:"flex",alignItems:"center",padding:"12px 16px",background:P.card,borderBottom:"1px solid "+P.border}}><button type="button" onClick={function(){setPage("cats");}} style={{background:"none",border:"none",fontSize:18,cursor:"pointer",color:P.muted,marginRight:8}}>‹</button><div style={{fontSize:16,fontWeight:700,color:P.ink}}>管理員</div>🥫</div><AdminPage/>🥫</div>)}
+      {page==="admin"&&(<div><div style={{display:"flex",alignItems:"center",padding:"12px 16px",background:P.card,borderBottom:"1px solid "+P.border}}><button type="button" onClick={function(){setPage("cats");}} style={{background:"none",border:"none",fontSize:18,cursor:"pointer",color:P.muted,marginRight:8}}>‹</button><div style={{fontSize:16,fontWeight:700,color:P.ink}}>管理員</div></div><AdminPage/></div>)}
       {page!=="admin"&&!showNewCat&&!catPicker&&!modalOpen&&<FAB onAddCat={fabAddCat} onAddWeight={fabAddWeight} onAddHealth={fabAddHealth} onAddRecord={fabAddRecord} onAddInventory={fabInventoryCb}/>}
       {showNewCat&&<CatEditPage cat={null} onSave={function(newCat){var cats=lsGet("rr_cats",[]);newCat.id=Date.now().toString();cats.push(newCat);lsSet("rr_cats",cats);setShowNewCat(false);setPage("cats");setCatsKey(function(k){return k+1;})}} onBack={function(){setShowNewCat(false);}}/>}
       {catPicker&&catPicker!=="new"&&<CatPickerModal cats={lsGet("rr_cats",[])} title="選擇貓咪" onSelect={function(cat){var trigger=catPicker;setCatPicker(null);setPage("cats");setFabTrigger(trigger+":"+cat.id);}} onClose={function(){setCatPicker(null);}}/>}
