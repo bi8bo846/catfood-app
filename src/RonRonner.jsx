@@ -646,7 +646,7 @@ function HealthEditPage(props){
         <FieldRow label="日期 *"><TextInput type="date" value={form.date} onChange={function(e){set("date",e.target.value);}}/></FieldRow>
         <FieldRow label="類型">
           <select value={form.type} onChange={function(e){set("type",e.target.value);}} style={{width:"100%",padding:"10px 12px",borderRadius:10,border:"1px solid "+P.border,background:P.input,color:P.ink,fontSize:14}}>
-            {["🏥 體檢","💉 疫苗","🐛 驅蟲","其他"].map(function(t){return <option key={t} value={t}>{t}</option>;})}
+            {["🏥 體檢","💉 疫苗","🐛 驅蟲","🌀 其他"].map(function(t){return <option key={t} value={t}>{t}</option>;})}
           </select>
         </FieldRow>
         {form.type==="💉 疫苗"&&(
@@ -1002,7 +1002,7 @@ function CatsPage(props){
   function openEditHealth(h){setEditHealth(h);setHealthForm(Object.assign({photos:[],bloodVals:{},vaccineType:"三合一",vaccineCustom:"",hospital:"",batchNo:"",nextDate:"",doctor:"",bodyWeight:"",dewormType:"體外",dewormBrand:"寵愛",dewormBrandCustom:"",dewormNextDate:""},h));setShowHealthEdit(true);onModalOpen();}
   function handleSaveHealth(f){var ft=f||healthForm;var sid=selId||(cats.length?cats[0].id:null);if(!ft.date||!sid)return;var nextH=Object.assign({},healths);if(editHealth){nextH[sid]=(nextH[sid]||[]).map(function(h){return h.id===editHealth.id?Object.assign({},ft,{id:editHealth.id}):h;})}else{nextH[sid]=(nextH[sid]||[]).concat([Object.assign({id:Date.now()+""},ft)]);}saveHealths(nextH);if(sid&&sid!==selId)setSelId(sid);setEditHealth(null);setCatTab("health");setShowHealthEdit(false);onModalClose();}
   function handleDeleteHealth(hid){var nextH=Object.assign({},healths);nextH[selId]=(nextH[selId]||[]).filter(function(h){return h.id!==hid;});saveHealths(nextH);}
-  function typeLabel(t){if(t==="🐛 驅蟲")return "🐛 驅蟲";if(t==="💉 疫苗")return "💉 疫苗";if(t==="🏥 體檢")return "🏥 體檢";return "其他";}
+  function typeLabel(t){if(t==="🐛 驅蟲")return "🐛 驅蟲";if(t==="💉 疫苗")return "💉 疫苗";if(t==="🏥 體檢")return "🏥 體檢";return "🌀 其他";}
   return(
     <div style={{background:P.bg,minHeight:"100vh",paddingBottom:80}}>
       {cats.length===0?(
