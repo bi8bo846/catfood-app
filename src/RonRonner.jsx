@@ -129,31 +129,30 @@ function RecordDetailPage(props){
           )}
           {rec.type==="🏥 體檢"&&(rec.hospital||rec.doctor||rec.bodyWeight)&&(
             <div style={{marginTop:8,paddingTop:8,borderTop:"1px solid "+P.border}}>
-              {rec.hospital&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>醫院</span><span style={{fontSize:13,color:P.ink}}>{rec.hospital}</span>🥫</div>}
-              {rec.doctor&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>醫師</span><span style={{fontSize:13,color:P.ink}}>{rec.doctor}</span>🥫</div>}
-              {rec.bodyWeight&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>當日體重</span><span style={{fontSize:13,fontWeight:600,color:P.ink}}>{rec.bodyWeight} kg</span>🥫</div>}
+{rec.hospital&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>醫院</span><span style={{fontSize:13,color:P.ink}}>{rec.hospital}</span></div>}              {rec.doctor&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>醫師</span><span style={{fontSize:13,color:P.ink}}>{rec.doctor}</span></div>}
+              {rec.bodyWeight&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>當日體重</span><span style={{fontSize:13,fontWeight:600,color:P.ink}}>{rec.bodyWeight} kg</span></div>}
             </div>
           )}
           {rec.type==="💉 疫苗"&&(rec.vaccineType||rec.hospital||rec.batchNo||rec.nextDate)&&(
             <div style={{marginTop:8,paddingTop:8,borderTop:"1px solid "+P.border}}>
-              {rec.vaccineType&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>疫苗種類</span><span style={{fontSize:13,color:P.ink,fontWeight:600}}>{(rec.vaccineType==="其他（自訂）"||rec.vaccineType==="其他")?rec.vaccineCustom||rec.vaccineType:rec.vaccineType}</span>🥫</div>}
-              {rec.hospital&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>醫院</span><span style={{fontSize:13,color:P.ink}}>{rec.hospital}</span>🥫</div>}
-              {rec.batchNo&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>批號</span><span style={{fontSize:13,color:P.ink}}>{rec.batchNo}</span>🥫</div>}
-              {rec.nextDate&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>下次施打</span><span style={{fontSize:13,color:P.btn,fontWeight:600}}>{rec.nextDate}</span>🥫</div>}
+              {rec.vaccineType&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>疫苗種類</span><span style={{fontSize:13,color:P.ink,fontWeight:600}}>{(rec.vaccineType==="其他（自訂）"||rec.vaccineType==="其他")?rec.vaccineCustom||rec.vaccineType:rec.vaccineType}</span></div>}
+              {rec.hospital&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>醫院</span><span style={{fontSize:13,color:P.ink}}>{rec.hospital}</span></div>}
+              {rec.batchNo&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>批號</span><span style={{fontSize:13,color:P.ink}}>{rec.batchNo}</span></div>}
+              {rec.nextDate&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>下次施打</span><span style={{fontSize:13,color:P.btn,fontWeight:600}}>{rec.nextDate}</span></div>}
             </div>
           )}
           {rec.type==="🐛 驅蟲"&&(rec.dewormType||rec.dewormBrand||rec.dewormNextDate)&&(
             <div style={{marginTop:8,paddingTop:8,borderTop:"1px solid "+P.border}}>
-              {rec.dewormType&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>驅蟲類型</span><span style={{fontSize:13,color:P.ink,fontWeight:600}}>{rec.dewormType}</span>🥫</div>}
-              {rec.dewormBrand&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>品牌</span><span style={{fontSize:13,color:P.ink}}>{rec.dewormBrand==="其他（自訂）"?rec.dewormBrandCustom||rec.dewormBrand:rec.dewormBrand}</span>🥫</div>}
-              {rec.dewormNextDate&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>下次驅蟲</span><span style={{fontSize:13,color:P.btn,fontWeight:600}}>{rec.dewormNextDate}</span>🥫</div>}
+              {rec.dewormType&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>驅蟲類型</span><span style={{fontSize:13,color:P.ink,fontWeight:600}}>{rec.dewormType}</span></div>}
+              {rec.dewormBrand&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>品牌</span><span style={{fontSize:13,color:P.ink}}>{rec.dewormBrand==="其他（自訂）"?rec.dewormBrandCustom||rec.dewormBrand:rec.dewormBrand}</span></div>}
+              {rec.dewormNextDate&&<div style={{display:"flex",justifyContent:"space-between",padding:"4px 0"}}><span style={{fontSize:13,color:P.muted}}>下次驅蟲</span><span style={{fontSize:13,color:P.btn,fontWeight:600}}>{rec.dewormNextDate}</span></div>}
             </div>
           )}
         </div>
         {Object.keys(rec.bloodVals||{}).length>0&&rec.type==="🏥 體檢"&&(
           <BloodAISection bloodVals={rec.bloodVals} groups={BLOOD_GROUPS}/>
         )}
-        {rec.note&&<div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"14px",marginBottom:8}}><div style={{fontSize:12,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:14,color:P.ink,lineHeight:1.6,whiteSpace:"pre-wrap"}}>{rec.note}</div>🥫</div>}
+        {rec.note&&<div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"14px",marginBottom:8}}><div style={{fontSize:12,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:14,color:P.ink,lineHeight:1.6,whiteSpace:"pre-wrap"}}>{rec.note}</span></div>}
         {Object.keys(rec.bloodVals||{}).length>0&&rec.type==="🏥 體檢"&&(
           <div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"14px",marginBottom:8}}>
             <div style={{fontSize:12,color:P.muted,marginBottom:10}}>血檢數值</div>
