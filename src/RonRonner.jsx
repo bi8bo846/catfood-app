@@ -1816,7 +1816,7 @@ function TabIngredients(props){var data=props.data;
           var displayText = r.cls==="g" ? "無添加" : r.text;
           return(
           <div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"10px 14px",borderRadius:14,fontSize:13,lineHeight:1.5,background:c.bg,border:"1px solid "+c.border+"",color:c.text}}>
-            <span style={{flexShrink:0}}><SIcon cls={r.cls} sz={13}/>🌈</span>
+            <span style={{flexShrink:0}}><SIcon cls={r.cls} sz={13}/></span>
             <span style={{fontWeight:600}}>{r.cat}</span>
             <span style={{opacity:.75,fontSize:12}}>{displayText}</span>
           </div>
