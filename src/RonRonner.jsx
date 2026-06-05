@@ -152,8 +152,7 @@ function RecordDetailPage(props){
         {Object.keys(rec.bloodVals||{}).length>0&&rec.type==="🏥 體檢"&&(
           <BloodAISection bloodVals={rec.bloodVals} groups={BLOOD_GROUPS}/>
         )}
-        {rec.note&&<div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"14px",marginBottom:8}}><div style={{fontSize:12,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:14,color:P.ink,lineHeight:1.6,whiteSpace:"pre-wrap"}}>{rec.note}</span></div>}
-        {Object.keys(rec.bloodVals||{}).length>0&&rec.type==="🏥 體檢"&&(
+{rec.note&&<div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"14px",marginBottom:8}}><div style={{fontSize:12,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:14,color:P.ink,lineHeight:1.6,whiteSpace:"pre-wrap"}}>{rec.note}</div></div>}        {Object.keys(rec.bloodVals||{}).length>0&&rec.type==="🏥 體檢"&&(
           <div style={{background:P.card,borderRadius:16,border:"1px solid "+P.border,padding:"14px",marginBottom:8}}>
             <div style={{fontSize:12,color:P.muted,marginBottom:10}}>血檢數值</div>
             {BLOOD_GROUPS.map(function(grp){
@@ -1499,7 +1498,7 @@ function InventoryPage(props){
               <div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>數量</span><span style={{fontSize:13,fontWeight:700,color:P.ink}}>{detailCan.qty}</span></div>
               {detailCan.expiry&&<div style={{display:"flex",justifyContent:"space-between"}}><span style={{fontSize:13,color:P.muted}}>到期日</span><span style={{fontSize:13,color:P.ink}}>{detailCan.expiry}</span></div>}
               {detailCan.note&&<div><div style={{fontSize:13,color:P.muted,marginBottom:4}}>備註</div><div style={{fontSize:13,color:P.ink,whiteSpace:"pre-wrap",lineHeight:1.6}}>{detailCan.note}</span></div>}
-            </div>
+            </span></div>
             <div style={{display:"flex",gap:8,marginTop:20}}>
               <BtnGhost onClick={function(){handleDelete(detailCan.id);setDetailCan(null);}} style={{flex:1,color:"#B91C1C",borderColor:"#FCCACA"}}>刪除</BtnGhost>
               <Btn onClick={function(){openEdit(detailCan);setDetailCan(null);}} style={{flex:1}}>編輯</Btn>
